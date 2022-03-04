@@ -7,7 +7,7 @@ This repo contains the source code and documentation for the thiopaq metagenomic
 First activate the atlas conda environment at the start of each session:
 
 ```bash
-conda activate $PWD/miniconda/envs/atlas
+conda activate $PWD/miniconda3/envs/atlas
 ```
 
 ### Download atlas references
