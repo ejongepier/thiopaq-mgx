@@ -4,6 +4,12 @@ This repo contains the source code and documentation for the thiopaq metagenomic
 
 ## Usage
 
+First activate the atlas conda environment at the start of each session:
+
+```bash
+conda activate $PWD/miniconda/envs/atlas
+```
+
 ### Download atlas references
 
 Download the atlas reference files and store in db directory.
@@ -47,16 +53,17 @@ sed -i "s~tmpdir: /tmp~tmpdir: /scratch/\$USER/$DATE~" $RUNDIR/config.yaml
 ### Run atlas
 
 Submit the atlas run script to the cluster. First try a dry run to make sure it works.
-You can then check the log in ``logs/atlas-$USER-<jobid>*``, which lists the jobs atlas will execute if you remove the drurn parameter next
 
 ```bash
 sbatch scripts/atlas-run.sh -w results/atlas/$DATE -c results/atlas/$DATE/config.yaml -t /scratch/$USER/$DATE -p --dryrun
 ```
 
+You can then check the log in ``logs/atlas-$USER-<jobid>*``, which lists the jobs atlas will execute if you remove the dryrun parameter next
+
 Actual run:
 
 ```bash
-sbatch scripts/atlas-run.sh -w results/atlas/$DATE -c results/atlas/$DATE/config.yaml -t /scratch/$USER/$DATE -p
+sbatch scripts/atlas-run.sh -w results/atlas/$DATE -c results/atlas/$DATE/config.yaml -t /scratch/$USER/$DATE
 ```
 
 ## Authors
