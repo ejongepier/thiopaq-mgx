@@ -3,7 +3,7 @@
 #SBATCH --job-name=atlas
 #SBATCH --output=logs/%x-%u-%A-%a.log
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=58
 #SBATCH --time=12000
 #SBATCH --mem=480G
 ##SBATCH --nodelist=omics-cn004
